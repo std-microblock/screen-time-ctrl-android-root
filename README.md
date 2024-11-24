@@ -7,6 +7,7 @@ The real strong screen time limit, with no app, requires magisk.
 adb push <path-to-your-config> /data/media/0/limit_config.json
 # install the limit_app
 adb push screen-time-ctrl-android-root /data/tmp/limit_app
+adb shell chmod 777 /data/tmp/limit_app
 adb shell su -c /data/tmp/limit_app &
 ```
 

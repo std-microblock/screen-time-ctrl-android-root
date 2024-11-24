@@ -3,7 +3,6 @@ use std::random;
 
 use anyhow::Context;
 use chrono::{Datelike, Timelike};
-use fork::{daemon, Fork};
 use serde::{Deserialize, Serialize};
 mod android_dumpsys_usagestats_parser;
 
@@ -229,7 +228,7 @@ fn run_main() {
         }
         Err(e) => {
             println!("Failed to read config: {:?}", e);
-            let config_str = serde_json::to_string(&default_config).unwrap();
+            let config_str = serde_json5::to_string(&default_config).unwrap();
             std::fs::write(CONFIG_PATH, config_str).unwrap();
         }
     }
