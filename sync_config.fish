@@ -1,0 +1,1 @@
+adb push ./limit_config.json /data/media/0/
